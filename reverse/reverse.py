@@ -42,12 +42,12 @@ class LinkedList:
         if self.head is None:
             return
 
-        def dive(current_node):
+        def append_next_node_to_head(current_node):
             if current_node is None:
                 return
             self.add_to_head(current_node.get_value())
-            dive(current_node.get_next())
+            append_next_node_to_head(current_node.get_next())
 
         next_node = self.head.get_next()
         self.head.set_next(None)
-        dive(next_node) 
+        append_next_node_to_head(next_node) 
